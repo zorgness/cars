@@ -1,13 +1,20 @@
 import './App.css';
+import React from 'react';
 import Mycars from './Mycars';
 
-function App() {
+class App extends React.Component {
+  state = {
+    title: 'My Cars List'
+  }
+
+  render() {
   return (
     <div className="App">
-        <Mycars />
+        <Mycars title={this.state.title} />
     </div>
 
   );
+  }
 }
 
 export default App;
