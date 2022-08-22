@@ -1,25 +1,23 @@
 
 const Car = ({brand , color}) => {
-  const colorInfo = color ?  <p>Color: { color }</p> : <p>Color: not defined</p>
-  if(brand) {
-    return (
+
+    let colorInfo = "";
+      if(color) {
+        colorInfo = color;
+      } else {
+        colorInfo = "not defined";
+      }
+
+    return brand ? (
       <div style={{ backgroundColor: 'hotpink', width: '400px', padding: '10px', margin: '5px auto' }}>
         <p>Brand: { brand } </p>
-        { colorInfo }
+        <p>Color: { colorInfo }</p>
       </div>
-    )
-
-  } else {
-    return (
-      <div style={{ backgroundColor: 'hotpink', width: '400px', padding: '10px', margin: '5px auto' }}>
-
-        <p>No datas</p>
-      </div>
-    )
-
-
+    ) : (
+        <div style={{ backgroundColor: 'hotpink', width: '400px', padding: '10px', margin: '5px auto' }}>
+          <p>No datas</p>
+        </div>)
   }
 
-}
 
 export default Car;
