@@ -18,11 +18,11 @@ class Mycars extends Component {
 
     return (
       <div>
-        <Wrapper><h1 style={{color:colortitle}}>{ title }</h1></Wrapper>
-        <Wrapper><Car brand={capitalizeFirst(this.state.cars[0])} color="grey" /></Wrapper>
-        <Wrapper><Car brand={capitalizeFirst(this.state.cars[1])} /></Wrapper>
-        <Wrapper><Car brand={capitalizeFirst(this.state.cars[2])} color="black"/></Wrapper>
-        <Wrapper><Car /></Wrapper>
+        <Wrapper><Myheader myStyle={ colortitle }>{ title }</Myheader></Wrapper>
+        <Car brand={capitalizeFirst(this.state.cars[0])} color="grey" />
+        <Car brand={capitalizeFirst(this.state.cars[1])} />
+        <Car brand={capitalizeFirst(this.state.cars[2])} color="black"/>
+        <Car />
 
 
       </div>

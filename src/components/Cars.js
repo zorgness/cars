@@ -10,15 +10,16 @@ const Car = ({brand , color}) => {
       }
 
     return brand ? (
-        <>
+        <Wrapper>
           <p>Brand: { brand } </p>
           <p>Color: { colorInfo }</p>
-        </>
+        </Wrapper>
 
     ) : (
-
-          <p>No datas</p>)
-
+      <Wrapper>
+         <p>No datas</p>
+      </Wrapper>
+    )
   }
 
 
