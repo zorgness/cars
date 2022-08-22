@@ -1,5 +1,5 @@
 
-const Myheader = ({children, myStyle}) => <h1 style={{color: myStyle}}>{children}</h1>;
+const Myheader = ({children, myStyle}) => <h1 style={{color: myStyle}} className="">{children}</h1>;
 
 
 
