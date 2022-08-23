@@ -4,6 +4,7 @@ import Mycars from './components/Mycars';
 import Welcome from './components/Welcome';
 import Parent from './components/Parent';
 import Display from './components/Display';
+import Game from './components/Game';
 
 class App extends React.Component {
   state = {
@@ -43,7 +44,13 @@ class App extends React.Component {
 
         <input type="text" onChange={this.changeViaInput} value={this.state.title} placeholder="change by input" />
 
+        <hr/>
+
         <Display />
+
+        <hr/>
+
+        <Game />
     </div>
 
   );
