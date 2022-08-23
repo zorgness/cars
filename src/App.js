@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Mycars from './components/Mycars';
+import Welcome from './components/Welcome';
 
 class App extends React.Component {
   state = {
@@ -30,6 +31,7 @@ class App extends React.Component {
   render() {
   return (
     <div className="App">
+        <Welcome />
         <Mycars title={this.state.title} color={this.state.color}/>
 
         <button onClick={this.changeTitle}>change title</button>
