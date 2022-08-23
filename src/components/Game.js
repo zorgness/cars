@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Alert from 'react-bootstrap/Alert';
 import Btn from './CustomBtn';
+import { Container } from 'react-bootstrap';
 
 class Game extends Component {
 
@@ -34,12 +35,12 @@ class Game extends Component {
 
 
     return(
-      <div>
+      <Container>
         <h1>Game</h1>
           <Alert variant={this.state.status}>{result}</Alert>
         <button className="btn btn-primary" onClick={this.playGame}>Play</button>
         <Btn handleClick={this.playGame}>Play</Btn>
-      </div>
+      </Container>
     )
 
 
