@@ -1,6 +1,6 @@
 import Wrapper from './Wrapper';
 
-const Car = ({brand , color}) => {
+const Car = ({brand , color, year}) => {
 
     let colorInfo = "";
       if(color) {
@@ -13,6 +13,7 @@ const Car = ({brand , color}) => {
         <Wrapper>
           <p>Brand: { brand } </p>
           <p>Color: { colorInfo }</p>
+          <p>Year: { year }</p>
         </Wrapper>
 
     ) : (
