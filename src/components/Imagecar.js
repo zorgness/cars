@@ -1,7 +1,7 @@
 import React from 'react';
-import Imgcar from '../images/car.svg';
+import Imgcar from '../images/car.png';
 
-const Imagecar = () => {
+const Imagecar = (props) => {
 
   return <img src={Imgcar} alt="" />
 }

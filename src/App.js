@@ -6,6 +6,7 @@ import Parent from './components/Parent';
 import Display from './components/Display';
 import Game from './components/Game';
 import Form from './components/Form';
+import Mynavbar from './components/Navbar';
 
 class App extends React.Component {
   state = {
@@ -35,6 +36,7 @@ class App extends React.Component {
   render() {
   return (
     <div className="App">
+        <Mynavbar />
         <Parent />
         <Welcome />
         <Mycars title={this.state.title} color={this.state.color}/>
