@@ -5,6 +5,7 @@ import Welcome from './components/Welcome';
 import Parent from './components/Parent';
 import Display from './components/Display';
 import Game from './components/Game';
+import Form from './components/Form';
 
 class App extends React.Component {
   state = {
@@ -51,6 +52,10 @@ class App extends React.Component {
         <hr/>
 
         <Game />
+
+        <hr/>
+
+        <Form />
     </div>
 
   );
