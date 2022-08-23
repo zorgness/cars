@@ -2,6 +2,8 @@ import './App.css';
 import React from 'react';
 import Mycars from './components/Mycars';
 import Welcome from './components/Welcome';
+import Parent from './components/Parent';
+import Display from './components/Display';
 
 class App extends React.Component {
   state = {
@@ -31,6 +33,7 @@ class App extends React.Component {
   render() {
   return (
     <div className="App">
+        <Parent />
         <Welcome />
         <Mycars title={this.state.title} color={this.state.color}/>
 
@@ -39,6 +42,8 @@ class App extends React.Component {
         <button onClick={this.changeViaBind.bind(this, 'Via bind')}>change title bind</button>
 
         <input type="text" onChange={this.changeViaInput} value={this.state.title} placeholder="change by input" />
+
+        <Display />
     </div>
 
   );
