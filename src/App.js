@@ -7,6 +7,7 @@ import Display from './components/Display';
 import Game from './components/Game';
 import Form from './components/Form';
 import Mynavbar from './components/Navbar';
+import Lifecycle from './components/Lifecycle';
 
 class App extends React.Component {
   state = {
@@ -58,6 +59,10 @@ class App extends React.Component {
         <hr/>
 
         <Form />
+
+        <hr/>
+
+        <Lifecycle name="denise" />
     </div>
 
   );
