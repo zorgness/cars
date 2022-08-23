@@ -7,7 +7,17 @@ class Game extends Component {
     winner: true
   }
 
+  playGame = () => {
+    if(this.state.winner === false) {
+      this.setState({ winner: true })
+    } else {
+      this.setState({ winner: false })
+    }
+  }
+
   render() {
+
+
     let result = "";
     // if(this.state.winner) {
     //   result = <h3>Bravo {this.state.player}</h3>
@@ -24,6 +34,7 @@ class Game extends Component {
       <div>
         <h1>Game</h1>
           {result}
+        <button onClick={this.playGame}>Play</button>
       </div>
     )
 
