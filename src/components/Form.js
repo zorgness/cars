@@ -5,7 +5,7 @@ class Form extends Component {
   render() {
     return (
       <div>
-        <Imagecar color="aqua" heigth={400}/>
+        <Imagecar color="aqua" height={400}/>
         <h1>Form</h1>
       </div>
     )
