@@ -16,3 +16,24 @@ code {
   color: red;
   font-weight: bolder;
 }
+
+.carsTable {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border-collapse: collapse;
+  width: 60px;
+  margin: 20px auto;
+}
+
+.carsTable td, .carsTable th {
+  border: 1px solid black;
+  padding: 8px;
+  width: 33%;
+  text-align: center;
+}
+
+.carsTable th {
+  background-color: blue;
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}

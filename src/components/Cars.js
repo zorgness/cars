@@ -10,11 +10,18 @@ const Car = ({brand , color, year}) => {
       }
 
     return brand ? (
-        <Wrapper>
-          <p>Brand: { brand } </p>
-          <p>Color: { colorInfo }</p>
-          <p>Year: { year }</p>
-        </Wrapper>
+        // <Wrapper>
+        //   <p>Brand: { brand } </p>
+        //   <p>Color: { colorInfo }</p>
+        //   <p>Year: { year }</p>
+        // </Wrapper>
+
+          <tr>
+            <td>{ brand }</td>
+            <td>{ colorInfo }</td>
+            <td>{ year }</td>
+          </tr>
+
 
     ) : (
       <Wrapper>

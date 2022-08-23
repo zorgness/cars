@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import Car from './Cars';
 import capitalizeFirst from '../utils/Capitalizefirst';
 import Wrapper from './Wrapper';
@@ -60,7 +60,7 @@ class Mycars extends Component {
     const colortitle = this.props.color;
 
     return (
-      <div>
+      <Fragment>
         <Wrapper><Myheader myStyle={ colortitle } onMouseOver={ this.mouseOver }>{ title }</Myheader></Wrapper>
         <h3 onMouseOver={ this.mouseOver }>Amet consectetur</h3>
         <p onCopy={this.noCopy}>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
@@ -69,20 +69,29 @@ class Mycars extends Component {
         <Car brand={capitalizeFirst(this.state.cars[2].brand)} color={this.state.cars[2].color} year={year - this.state.cars[2].year + 'years'} />
         <Car /> */}
 
-
+        <table className='carsTable'>
+          <thead>
+          <tr>
+            <th>Brand</th>
+            <th>Color</th>
+            <th>Year</th>
+          </tr>
+          </thead>
+        <tbody>
         {this.state.cars.map(({brand, color, year}, index ) => {
           return (
             <Car key={index} brand={capitalizeFirst(brand)} color={color} year={this.getAge(year)} />
           )
         })}
-
+          </tbody>
+        </table>
         <button onClick={ this.changeSubTitle }>change subtitle</button>
 
 
         <button onClick={ this.add10Years}>add 10 years</button>
 
 
-      </div>
+      </Fragment>
     )
   };
 
