@@ -11,6 +11,8 @@ import Lifecycle from './components/Lifecycle';
 import Example from './components/Modal';
 import SecondrootComponent from './components/SecondrootComponent';
 import Myref from './components/Myref';
+import Vegeta from './components/Vegeta';
+import Goku from './components/Goku';
 
 class App extends React.Component {
 
@@ -19,7 +21,9 @@ class App extends React.Component {
     this.state = {
       title: 'My Cars List',
       color: 'green',
-      showModal: false
+      showModal: false,
+      vegeta: 100,
+      goku: 100
     }
 
     this.refComp = React.createRef();
@@ -56,7 +60,13 @@ class App extends React.Component {
 
 
   handleClick = () => {
-    this.refComp.current.addFocus();
+    this.refComp.current.focus();
+
+  }
+
+  reduceLife = (param) => {
+
+    param === 'Goku' ? this.setState({vegeta: this.state.vegeta - 10}) : this.setState({goku: this.state.goku - 10})
   }
 
   render() {
@@ -107,6 +117,19 @@ class App extends React.Component {
 
         <Myref ref={this.refComp}/>
         <button onClick={this.handleClick}>validation</button>
+
+        <hr/>
+
+        <div className="container text-center">
+          <h1>Goku vs Vegeta</h1>
+          <div className="row">
+
+            <Vegeta name="Vegeta" life={this.state.vegeta} reduceLife={this.reduceLife}/>
+
+            <Goku name="Goku" life={this.state.goku} reduceLife={this.reduceLife}/>
+
+          </div>
+        </div>
     </div>
 
   );
