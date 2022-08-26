@@ -4,7 +4,7 @@ import '../App.css'
 const Community = () => {
   return (
     <div>
-      <h1 class="my-title">Where To Get Support</h1>
+      <h1 className="my-title">Where To Get Support</h1>
     </div>
   )
 }

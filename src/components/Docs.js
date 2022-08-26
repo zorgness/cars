@@ -1,10 +1,12 @@
 import React from 'react'
 import '../App.css'
 
-const Docs = () => {
+const Docs = (props) => {
+
+  console.log(props)
   return (
     <div>
-      <h1 class="my-title">Getting Started</h1>
+      <h1 className="my-title">Getting Started</h1>
     </div>
   )
 }

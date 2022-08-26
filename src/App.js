@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Mycars from './components/Mycars';
 import Welcome from './components/Welcome';
 import Parent from './components/Parent';
@@ -32,7 +32,13 @@ class App extends React.Component {
       color: 'green',
       showModal: false,
       vegeta: 100,
-      goku: 100
+      goku: 100,
+      underConstruction: {
+        Docs: false,
+        Tutorial: true,
+        Community: false
+      }
+
     }
 
     this.refComp = React.createRef();
@@ -89,6 +95,11 @@ class App extends React.Component {
           <Switch>
               <Route exact path="/" component={Docs} />
               <Route path="/tutorial" component={Tutorial} />
+              {/* <Route path="/tutorial" render={() => (
+
+                this.state.underConstruction.Tutorial ? (<Redirect to="/" />) : (<Tutorial />)
+
+              )}/> */}
               <Route strict path="/community/" component={Community } />
               <Route component={ErrorPage} />
           </Switch>
