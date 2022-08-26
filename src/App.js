@@ -33,12 +33,13 @@ class App extends React.Component {
       showModal: false,
       vegeta: 100,
       goku: 100,
+      saiyan: true,
+
       underConstruction: {
         Docs: false,
         Tutorial: true,
         Community: false
       }
-
     }
 
     this.refComp = React.createRef();
@@ -155,7 +156,7 @@ class App extends React.Component {
           <h1>Goku vs Vegeta</h1>
           <div className="row">
 
-            <Vegeta name="Vegeta" life={this.state.vegeta} reduceLife={this.reduceLife}/>
+            <Vegeta name={(saiyan) => saiyan && "Vegeta" } saiyan={this.state.saiyan} life={this.state.vegeta} reduceLife={this.reduceLife}/>
 
             <Goku name="Goku" life={this.state.goku} reduceLife={this.reduceLife}/>
 
