@@ -13,7 +13,7 @@ code {
 }
 
 .styled {
-  color: red;
+  color: blue;
   font-weight: bolder;
 }
 
@@ -36,4 +36,29 @@ code {
   color: white;
   padding-top: 12px;
   padding-bottom: 12px;
+}
+
+.my-modal {
+
+  position:absolute;
+  top:0;
+  left:0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.App {
+  position: relative;
+}
+
+.my-modal > div {
+  width: 60%;
+  background-color: whitesmoke;
+  padding: 20px;
+  min-height: 200px;
+  border-radius: 5px;
 }

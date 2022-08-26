@@ -8,11 +8,14 @@ import Game from './components/Game';
 import Form from './components/Form';
 import Mynavbar from './components/Navbar';
 import Lifecycle from './components/Lifecycle';
+import Example from './components/Modal';
+import SecondrootComponent from './components/SecondrootComponent';
 
 class App extends React.Component {
   state = {
     title: 'My Cars List',
-    color: 'green'
+    color: 'green',
+    showModal: false
   }
 
   changeTitle = () => {
@@ -34,7 +37,17 @@ class App extends React.Component {
     })
   }
 
+  handleShow = () => {
+    this.setState({showModal: true})
+  }
+
+  handleClose = () => {
+    this.setState({showModal: false})
+  }
+
   render() {
+
+    const modal = this.state.showModal && (<SecondrootComponent close={this.handleClose}/>)
   return (
     <div className="App">
         <Mynavbar />
@@ -62,7 +75,19 @@ class App extends React.Component {
 
         <hr/>
 
-        <Lifecycle name="denise" />
+        <Lifecycle  />
+
+        <hr/>
+
+        <Example />
+
+        <hr/>
+
+        <div className='test-modal'>
+        <button onClick={this.handleShow}>show modal</button>
+          { modal }
+
+        </div>
     </div>
 
   );
