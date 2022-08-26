@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import {BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 import Mycars from './components/Mycars';
 import Welcome from './components/Welcome';
 import Parent from './components/Parent';
@@ -17,6 +18,10 @@ import Goku2 from './components/Goku2';
 import Vegeta2 from './components/Vegeta2';
 import Frieza from './components/Frieza';
 import ErrorBoundary from './components/ErrorBondary';
+import Docs from './components/Docs';
+import Tutorial from './components/Tutorials';
+import Community from './components/Community';
+import ErrorPage from './components/ErrorPage';
 
 class App extends React.Component {
 
@@ -28,7 +33,13 @@ class App extends React.Component {
       showModal: false,
       vegeta: 100,
       goku: 100,
-      saiyan: true
+      saiyan: true,
+
+      underConstruction: {
+        Docs: false,
+        Tutorial: true,
+        Community: false
+      }
     }
 
     this.refComp = React.createRef();
@@ -80,6 +91,22 @@ class App extends React.Component {
   return (
     <div className="App">
         <Mynavbar />
+
+        <BrowserRouter>
+          <Switch>
+              <Route exact path="/" component={Docs} />
+              <Route path="/tutorial" component={Tutorial} />
+              {/* <Route path="/tutorial" render={() => (
+
+                this.state.underConstruction.Tutorial ? (<Redirect to="/" />) : (<Tutorial />)
+
+              )}/> */}
+              <Route strict path="/community/" component={Community } />
+              <Route component={ErrorPage} />
+          </Switch>
+        </BrowserRouter>
+
+        <hr />
         <Parent />
         <Welcome />
         <Mycars title={this.state.title} color={this.state.color}/>
@@ -158,6 +185,11 @@ class App extends React.Component {
 
 
               </div>
+
+              <hr />
+
+
+
 
 
 
