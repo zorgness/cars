@@ -1,22 +1,20 @@
 import React, { Component } from 'react'
 import Gok from '../images/goku.jpg';
+import findGoodGuy from './FindGoodGuy';
+
 
 export class Goku2 extends Component {
 
-  state = {
-    bg: ''
-  }
-
-  handleClick = () => {
-    this.setState({bg: 'bg-success'});
-  }
   render() {
+
+    const { bg, clickHandler } = this.props;
+
     return (
-      <div className={`p-1 ${this.state.bg}`} onClick={this.handleClick}>
+      <div className={`p-1 ${bg}`} onClick={clickHandler}>
         <img src={Gok} alt="Goku" />
       </div>
     )
   }
 }
 
-export default Goku2;
+export default findGoodGuy(Goku2);

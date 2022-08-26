@@ -33,8 +33,8 @@ export class Goku extends Component {
         <tbody>
           <tr>
             <td>{hocState.hits}</td>
-            {lifeValue}
-          </tr>
+              {lifeValue}
+            </tr>
 
         </tbody>
 
