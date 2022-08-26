@@ -10,6 +10,10 @@ class SecondrootComponent extends Component {
     document.body.appendChild(this.popUpContainer);
   }
 
+  componentWillUnmount() {
+    document.body.removeChild(this.popUpContainer);
+   }
+
   render() {
     return ReactDOM.createPortal (
       <div className="my-modal" onClick={this.props.close}>

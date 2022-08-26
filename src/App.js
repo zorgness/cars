@@ -10,13 +10,21 @@ import Mynavbar from './components/Navbar';
 import Lifecycle from './components/Lifecycle';
 import Example from './components/Modal';
 import SecondrootComponent from './components/SecondrootComponent';
+import Myref from './components/Myref';
 
 class App extends React.Component {
-  state = {
-    title: 'My Cars List',
-    color: 'green',
-    showModal: false
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: 'My Cars List',
+      color: 'green',
+      showModal: false
+    }
+
+    this.refComp = React.createRef();
   }
+
 
   changeTitle = () => {
     this.setState({title: 'New cars'});
@@ -43,6 +51,12 @@ class App extends React.Component {
 
   handleClose = () => {
     this.setState({showModal: false})
+  }
+
+
+
+  handleClick = () => {
+    this.refComp.current.addFocus();
   }
 
   render() {
@@ -88,6 +102,11 @@ class App extends React.Component {
           { modal }
 
         </div>
+
+        <hr/>
+
+        <Myref ref={this.refComp}/>
+        <button onClick={this.handleClick}>validation</button>
     </div>
 
   );
