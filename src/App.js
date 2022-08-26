@@ -8,12 +8,23 @@ import Game from './components/Game';
 import Form from './components/Form';
 import Mynavbar from './components/Navbar';
 import Lifecycle from './components/Lifecycle';
+import Example from './components/Modal';
+import SecondrootComponent from './components/SecondrootComponent';
+import Myref from './components/Myref';
 
 class App extends React.Component {
-  state = {
-    title: 'My Cars List',
-    color: 'green'
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: 'My Cars List',
+      color: 'green',
+      showModal: false
+    }
+
+    this.refComp = React.createRef();
   }
+
 
   changeTitle = () => {
     this.setState({title: 'New cars'});
@@ -34,7 +45,23 @@ class App extends React.Component {
     })
   }
 
+  handleShow = () => {
+    this.setState({showModal: true})
+  }
+
+  handleClose = () => {
+    this.setState({showModal: false})
+  }
+
+
+
+  handleClick = () => {
+    this.refComp.current.addFocus();
+  }
+
   render() {
+
+    const modal = this.state.showModal && (<SecondrootComponent close={this.handleClose}/>)
   return (
     <div className="App">
         <Mynavbar />
@@ -62,7 +89,24 @@ class App extends React.Component {
 
         <hr/>
 
-        <Lifecycle name="denise" />
+        <Lifecycle  />
+
+        <hr/>
+
+        <Example />
+
+        <hr/>
+
+        <div className='test-modal'>
+        <button onClick={this.handleShow}>show modal</button>
+          { modal }
+
+        </div>
+
+        <hr/>
+
+        <Myref ref={this.refComp}/>
+        <button onClick={this.handleClick}>validation</button>
     </div>
 
   );

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-class ChildComponent extends Component {
+class PureComp extends PureComponent {
   constructor(props) {
     super(props)
 
@@ -13,15 +13,15 @@ class ChildComponent extends Component {
     // console.log("from child didMount")
   }
   render() {
-    console.log(`%c from child render`, `color: blue;`)
+    console.log(`%c from pure render`, `color: green;`)
     return (
 
-      <div style={{color: 'blue'}}>
+      <div style={{color: 'green'}}>
         {/* {console.log("from child DOM")} */}
-        child: {this.props.name}
+        Pure: {this.props.name}
       </div>
     )
   }
 }
 
-export default ChildComponent
+export default PureComp;
