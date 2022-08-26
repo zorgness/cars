@@ -13,6 +13,10 @@ import SecondrootComponent from './components/SecondrootComponent';
 import Myref from './components/Myref';
 import Vegeta from './components/Vegeta';
 import Goku from './components/Goku';
+import Goku2 from './components/Goku2';
+import Vegeta2 from './components/Vegeta2';
+import Frieza from './components/Frieza';
+import ErrorBoundary from './components/ErrorBondary';
 
 class App extends React.Component {
 
@@ -130,6 +134,35 @@ class App extends React.Component {
 
           </div>
         </div>
+
+        <hr/>
+
+
+        <div className="container text-center">
+          <h1>Find the good guys</h1>
+
+              <div className="d-flex justify-content-around align-items-center flex-wrap">
+
+                <ErrorBoundary>
+                  <Vegeta2 />
+                </ErrorBoundary>
+
+                <ErrorBoundary>
+                  <Goku2 />
+                </ErrorBoundary>
+
+                <ErrorBoundary>
+                  <Frieza />
+                </ErrorBoundary>
+
+
+              </div>
+
+
+
+
+        </div>
+
     </div>
 
   );
