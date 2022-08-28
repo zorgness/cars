@@ -22,6 +22,7 @@ import Docs from './components/Docs';
 import Tutorial from './components/Tutorials';
 import Community from './components/Community';
 import ErrorPage from './components/ErrorPage';
+import Profile from './components/Profile';
 
 class App extends React.Component {
 
@@ -102,6 +103,7 @@ class App extends React.Component {
 
               )}/> */}
               <Route strict path="/community/" component={Community } />
+              <Route path="/user/:profileId"  component={Profile}/>
               <Route component={ErrorPage} />
           </Switch>
         </BrowserRouter>

@@ -32,6 +32,7 @@ function Mynavbar() {
             <Nav.Link href="/">Docs</Nav.Link>
             <Nav.Link href="/tutorial">Tutorial</Nav.Link>
             <Nav.Link href="/community/">Community</Nav.Link>
+            <Nav.Link href="/user:profilId">Profile</Nav.Link>
           </Nav>
 
         </Navbar.Collapse>
