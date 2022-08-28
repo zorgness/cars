@@ -3,7 +3,7 @@ import React from 'react';
 const Myref = React.forwardRef((props, ref) => {
 
   console.log(props);
-  console.log(ref);
+  console.log(`ref: ${ref}`);
 
     return (
       <div>
