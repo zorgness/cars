@@ -41,7 +41,7 @@ class Profile extends Component {
     this.setState({data: falseData[iD] })
 
 // let payload = {
-//   token: "1mpPcS0fhyCj58B-ySydBw",
+//
 //   data: {
 //     name: "nameFirst",
 //     email: "internetEmail",
