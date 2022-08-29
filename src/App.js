@@ -23,6 +23,8 @@ import Tutorial from './components/Tutorials';
 import Community from './components/Community';
 import ErrorPage from './components/ErrorPage';
 import Profile from './components/Profile';
+import Profile2 from './components/Profile2';
+import {MyContext} from './components/MyContext';
 
 class App extends React.Component {
 
@@ -40,6 +42,11 @@ class App extends React.Component {
         Docs: false,
         Tutorial: true,
         Community: false
+      },
+
+      user: {
+        name: 'lisa',
+        age: 8
       }
     }
 
@@ -107,6 +114,12 @@ class App extends React.Component {
               <Route component={ErrorPage} />
           </Switch>
         </BrowserRouter>
+
+        <hr />
+        <MyContext.Provider value={this.state.user}>
+          <Profile2 info={this.state.user}/>
+        </MyContext.Provider>
+
 
         <hr />
         <Parent />
